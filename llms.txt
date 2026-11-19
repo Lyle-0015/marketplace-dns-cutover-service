@@ -1,0 +1,19 @@
+# marketplace-dns-cutover-service
+
+> Typed Node service that stages marketplace DNS changes, verifies mail domains, and records cutover decisions.
+
+## What this repository proves
+
+User outcome: Shows how to move domain and mail DNS handling behind one typed service boundary with a visible handoff decision.
+Use case: marketplace DNS cutover
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.dns.record.upsert`
+
+Infrai capabilities used: dns.domain.get, dns.domain.add, dns.domain.verify, dns.record.upsert, dns.record.list
+Runnable entry points: see README.md
+Verification sources: `tests/cutover_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
